@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   allow_unauthenticated_access only: %i[new create]
-  before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :ensure_correct_user, only: [ :edit, :update ]
 
   def index
     @users= User.all
     @user = Current.user
     @book= Book.new
   end
-    
+
   def new
     if request.path == new_user_path
       redirect_to user_sign_up_path
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
-  
+
   def sign_up_params
     params.require(:user).permit(:name, :email_address, :password, :password_confirmation)
   end

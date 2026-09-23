@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [ :edit, :update, :destroy ]
 
   def index
     @book = Book.new
@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-  end 
+  end
 
   def create
     @book = Book.new(book_params)
@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title,:body)
+    params.require(:book).permit(:title, :body)
   end
 
   def ensure_correct_user
