@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+@import "bootstrap";
+
+.custom-navbar {
+  min-height: 60px;
+  padding: 0;
+  background-color: #343a40;
+}
+
+.custom-navbar > .container-fluid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.custom-navbar .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.custom-navbar .nav-link {
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.custom-navbar a,
+.custom-navbar a:visited,
+.custom-navbar a:focus,
+.custom-navbar a:active {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.custom-navbar a:hover {
+  color: #adb5bd !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+
+.btn-info {
+  background-color: #1999b0;
+  border-color: #1999b0;
+}
+
+.btn-success {
+  background-color: #239e41;
+  border-color: #239e41;
+}
+
+.home-footer {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.home-footer p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  text-decoration: none !important;
+}

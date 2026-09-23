@@ -1,0 +1,30 @@
+<div class="ms-5 mt-3" style="max-width: 200px;">
+  <h1 class="fs-2 fw-bold mb-2">Log in</h1>
+
+  <%= form_with(url: login_path, local: true) do |f| %>
+    <div class="mb-1">
+      <%= f.label :name, "Name", class: "form-label mb-1" %>
+      <%= f.text_field :name, class: "form-control form-control-sm border-secondary" %>
+    </div>
+
+    <div class="mb-1">
+      <%= f.label :password, "Password", class: "form-label mb-1" %>
+      <%= f.password_field :password, class: "form-control form-control-sm border-secondary" %>
+    </div>
+
+    <div class="form-check mb-1">
+      <%= f.check_box :remember_me, class: "form-check-input" %>
+      <%= f.label :remember_me, "Remember me", class: "form-check-label" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn btn-primary mb-2" %>
+    </div>
+  <% end %>
+
+  <div class="d-flex flex-column gap-1">
+    <%= link_to "Sign up", signup_path, class: "text-decoration-none" %>
+    <%= link_to "Forgot your password?", new_password_path, class: "text-decoration-none" %>
+  </div>
+</div>
+

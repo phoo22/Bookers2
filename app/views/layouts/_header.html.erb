@@ -1,0 +1,53 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+  <div class="container-fluid px-5">
+
+    <%= link_to "Bookers", root_path, class: "navbar-brand" %>
+
+    <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
+      
+      <% if authenticated? %>
+        <%= link_to user_path(Current.user), class: "nav-link" do %>
+          <i class="fa-solid fa-house"></i>
+          Home
+        <% end %>
+
+        <%= link_to users_path, class: "nav-link" do %>
+          <i class="fa-solid fa-users"></i>
+            Users
+        <% end %>
+
+        <%= link_to books_path, class: "nav-link" do %>
+          <i class="fa-solid fa-book-open"></i>
+            Books
+        <% end %>
+
+        <%= link_to session_path, data: { turbo_method: :delete }, class: "nav-link" do %>
+          <i class="fa-solid fa-right-from-bracket"></i> 
+            Log out
+        <% end %>
+
+      <% else %>
+        <%= link_to root_path, class: "nav-link" do %>
+          <i class="fa-solid fa-house"></i>
+          Home
+        <% end %>
+
+        <%= link_to about_path, class: "nav-link" do %>
+          <i class="fa-solid fa-link"></i>
+          About
+        <% end %>
+
+        <%= link_to user_sign_up_path, class: "nav-link" do %>
+          <i class="fa-solid fa-user-plus"></i>
+          Sign up
+        <% end %>
+
+        <%= link_to new_session_path, class: "nav-link" do %>
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Log in
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</nav>
